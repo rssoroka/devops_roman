@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  covid19_1:
+    image: rsorokaurjc/docker_swarm:0.1
+    build: .
+    ports:
+      - "8003:8001"
+    deploy:
+      replicas: 3
+      update_config:
+        delay: 10s
+
+  redis:
+    image: redis:alpine
