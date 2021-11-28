@@ -1,4 +1,4 @@
-output "public_ip_1" {
+output "public_ips" {
   description = "The public IP address of the swam node"
-  value       = aws_instance.swarm_node.public_ip
+  value       = aws_instance.swarm_node.*.public_ip
 }
