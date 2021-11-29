@@ -1,0 +1,13 @@
+- hosts: cluster
+  tasks:
+
+    - name: Scp local
+      copy:
+        src: ../../../docker-compose-swarm.yaml
+        dest: /home/ubuntu
+
+    - name: TEST
+      shell: >
+        docker stack deploy --compose-file docker-compose-swarm.yaml covid19
+      register: pepito
+
