@@ -2,10 +2,10 @@ version: '3.9'
 
 services:
   covid19_1:
-    image: rsorokaurjc/docker_swarm:0.1
+    image: rsorokaurjc/romansoroka:main
     build: .
     ports:
-      - "8003:8001"
+      - "40001:8000"
     deploy:
       replicas: 3
       update_config:
